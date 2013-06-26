@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-  response.send(out);
+  response.send(i'A startup is a business built to grow rapidly');
 });
 
 var port = process.env.PORT || 5000;
