@@ -12,10 +12,6 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
-
-app.get('/', function(request, response) {
   response.send('A startup is a business built to grow rapidly');
 });
 
