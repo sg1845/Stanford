@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var outfile = "prime.txt";
+
+console.log(" " +getPrimes(550,1)+ " ");
+fs.writeFileSync(outfile, getPrimes(550,1));
+
+function getPrimes(max,min){
+	var n= Math.floor(max);
+	min= min|| 2;
+	var notP= [1, 1];
+	var pA= [], i, j;
+	var limit= Math.sqrt(n)+1;
+	for(j= 3; j<= limit; j= j+2){
+		if(!notP[j]){
+			for(i= j+j; i<= n; i= i+j) notP[i]= 1;
+		}
+	}
+	i= min
+	while(i< n){
+		if(!notP[i] && i%2) pA[pA.length]= i;
+		i+= 1;
+	}
+	if(min<= 2) pA.unshift(2);
+	return pA;
+}
+
